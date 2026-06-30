@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cloud Based Attendance System</title>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="left">
+<h1>Cloud Based Attendance System</h1>
+<p>Student + Teacher Dashboard</p>
+<img src="image.jpg" class="hero-img">
+</div>
+
+<div class="right">
+<div class="box">
+
+<!-- STUDENT LOGIN -->
+<div id="login">
+<h2>Student Login</h2>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="pass" placeholder="Password">
+<button onclick="login()">Login</button>
+<span class="link" onclick="showTeacherLogin()">Teacher Login</span>
+<span class="link" onclick="showForgot()">Forgot Password?</span>
+<span class="link" onclick="showRegister()">New User? Register</span>
+</div>
+
+<!-- TEACHER LOGIN -->
+<div id="teacherLogin">
+<h2>Teacher Login</h2>
+<input type="text" id="t_email" placeholder="Teacher ID">
+<input type="password" id="t_pass" placeholder="Password">
+<button onclick="teacherLogin()">Login</button>
+<span class="link" onclick="showLogin()">Student Login</span>
+</div>
+
+<!-- REGISTER -->
+<div id="register">
+<h2>Register</h2>
+<input type="email" id="r_email" placeholder="Login Email">
+<input type="password" id="r_pass" placeholder="Password">
+<input type="email" id="r_student_email" placeholder="Student Email Alerts">
+<button onclick="registerUser()">Register</button>
+<span class="link" onclick="showLogin()">Already User? Login</span>
+</div>
+
+<!-- FORGOT -->
+<div id="forgot">
+<h2>Forgot Password</h2>
+<input type="email" id="f_email" placeholder="Registered Email">
+<input type="password" id="new_pass" placeholder="New Password">
+<button onclick="resetPassword()">Reset Password</button>
+<span class="link" onclick="showLogin()">Back To Login</span>
+</div>
+
+<!-- STUDENT DASHBOARD -->
+<div id="dashboard">
+<h2>Student Dashboard</h2>
+
+<input id="name" placeholder="Student Name">
+
+<select id="subject">
+<option>Cloud</option>
+<option>AI</option>
+<option>Networking</option>
+</select>
+
+<select id="status">
+<option>Present</option>
+<option>Absent</option>
+</select>
+
+<button onclick="markAttendance()">Mark Attendance</button>
+<button onclick="generateQR()">Generate QR Code</button>
+<button onclick="showStudentForm()">QR User Form</button>
+<button onclick="exportExcel()">Export Excel</button>
+
+<div id="qrcode"></div>
+
+<div id="studentForm">
+<input type="text" id="scanName" placeholder="Student Name">
+<input type="date" id="scanDate">
+
+<select id="scanSubject">
+<option>Cloud</option>
+<option>AI</option>
+<option>Networking</option>
+</select>
+
+<select id="scanCourse">
+<option>BCA</option>
+<option>BBA</option>
+<option>MCA</option>
+</select>
+
+<select id="scanSlot">
+<option>9AM - 10AM</option>
+<option>10AM - 11AM</option>
+<option>11AM - 12PM</option>
+</select>
+
+<button onclick="submitQRAttendance()">Submit Attendance</button>
+</div>
+
+<ul id="list"></ul>
+
+<button onclick="logout()">Logout</button>
+</div>
+
+<!-- TEACHER DASHBOARD -->
+<div id="teacherDashboard">
+<h2>Teacher Dashboard</h2>
+
+<button onclick="loadTeacherData()">View Attendance</button>
+<button onclick="exportExcel()">Export Excel</button>
+
+<ul id="teacherList"></ul>
+
+<button onclick="logout()">Logout</button>
+</div>
+
+<p class="footer">© 2026 Cloud Based Attendance System</p>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

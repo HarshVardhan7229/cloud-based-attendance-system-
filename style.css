@@ -1,0 +1,104 @@
+body{
+margin:0;
+font-family:Segoe UI;
+display:flex;
+height:100vh;
+}
+
+.left{
+flex:2;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+background:linear-gradient(-45deg,#ff6a00,#ee0979,#00c6ff,#0072ff,#00ff87);
+background-size:400% 400%;
+animation:rainbow 10s ease infinite;
+}
+
+.left h1{
+font-size:36px;
+margin:0;
+}
+
+.hero-img{
+width:85%;
+max-width:500px;
+margin-top:25px;
+border-radius:20px;
+border:3px solid rgba(255,255,255,.3);
+}
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#a18cd1,#fbc2eb);
+background-size:400% 400%;
+animation:rainbow 12s ease infinite;
+}
+
+.box{
+width:360px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(20px);
+color:white;
+max-height:95vh;
+overflow:auto;
+}
+
+input,select,button{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+box-sizing:border-box;
+}
+
+button{
+cursor:pointer;
+font-weight:bold;
+background:linear-gradient(to right,#ff512f,#dd2476);
+color:white;
+}
+
+.link{
+display:block;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+#login,#teacherLogin,#register,#forgot,#dashboard,#teacherDashboard,#studentForm{
+display:none;
+}
+
+#qrcode{
+text-align:center;
+margin-top:15px;
+}
+
+ul{
+max-height:200px;
+overflow:auto;
+padding-left:18px;
+}
+
+.footer{
+text-align:center;
+font-size:12px;
+margin-top:15px;
+}
+
+@keyframes rainbow{
+0%{background-position:0%}
+50%{background-position:100%}
+100%{background-position:0%}
+}
